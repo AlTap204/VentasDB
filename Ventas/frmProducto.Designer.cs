@@ -37,10 +37,10 @@
             this.txtCodigoBarras = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtCategoriaId = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.cmbCategorias = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +82,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 324);
+            this.label5.Location = new System.Drawing.Point(378, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 20);
             this.label5.TabIndex = 4;
@@ -117,13 +117,6 @@
             this.txtDescripcion.Size = new System.Drawing.Size(100, 26);
             this.txtDescripcion.TabIndex = 8;
             // 
-            // txtCategoriaId
-            // 
-            this.txtCategoriaId.Location = new System.Drawing.Point(227, 324);
-            this.txtCategoriaId.Name = "txtCategoriaId";
-            this.txtCategoriaId.Size = new System.Drawing.Size(100, 26);
-            this.txtCategoriaId.TabIndex = 9;
-            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(71, 383);
@@ -154,15 +147,24 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // cmbCategorias
+            // 
+            this.cmbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategorias.FormattingEnabled = true;
+            this.cmbCategorias.Location = new System.Drawing.Point(382, 79);
+            this.cmbCategorias.Name = "cmbCategorias";
+            this.cmbCategorias.Size = new System.Drawing.Size(236, 28);
+            this.cmbCategorias.TabIndex = 13;
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 470);
+            this.Controls.Add(this.cmbCategorias);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.txtCategoriaId);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.txtCodigoBarras);
@@ -190,9 +192,9 @@
         private System.Windows.Forms.TextBox txtCodigoBarras;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtCategoriaId;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ComboBox cmbCategorias;
     }
 }
