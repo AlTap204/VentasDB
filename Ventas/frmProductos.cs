@@ -19,12 +19,20 @@ namespace Ventas
             CargarProductos();
         }
 
-        private void CargarProductos()
+        private void CargarProductos(string consulta = "")
         {
             try
             {
                 Producto producto = new Producto();
-                DataTable dtProductos = producto.ObtenerTodos();
+                DataTable dtProductos = null;
+                if (string.IsNullOrWhiteSpace(consulta))
+                {
+                    dtProductos = producto.ObtenerTodos();
+                }
+                else
+                {
+                    dtProductos = producto.Consultar(consulta.Trim());
+                }
 
                 dgvProductos.DataSource = dtProductos;
             }
@@ -33,6 +41,25 @@ namespace Ventas
 
                 MessageBox.Show($"Ocurrio un error al cargar productos {ex.Message}");
             }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CargarProductos(txtConsulta.Text);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"Ocurrio un error al cargar productos {ex.Message}");
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmProducto frmProducto = new frmProducto();
+            frmProducto.ShowDialog();
         }
     }
 }
